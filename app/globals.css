@@ -58,7 +58,7 @@ h2 {
 
 p {
   margin-bottom: 1.2rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 a {
@@ -180,7 +180,7 @@ a:hover {
   margin-top: 4rem;
   border-top: 1px solid var(--border-color);
   padding-top: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: var(--accent);
   font-family: var(--font-sans);
 }
@@ -471,4 +471,334 @@ a:hover {
 
 .page-exit {
   opacity: 0;
+}
+
+/* Citations */
+.citation-wrapper {
+  position: relative;
+  display: inline;
+}
+
+.citation {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 0.85em;
+  vertical-align: super;
+  line-height: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.citation:hover {
+  color: var(--accent);
+}
+
+.citation-error {
+  color: #dc3545;
+}
+
+.citation-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--foreground);
+  color: var(--background);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  white-space: normal;
+  width: max-content;
+  max-width: 350px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.citation-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--foreground);
+}
+
+.citation-tooltip-authors {
+  font-weight: 600;
+  display: block;
+}
+
+.citation-tooltip-title {
+  font-style: italic;
+  display: block;
+}
+
+.citation-tooltip-venue {
+  color: var(--background);
+  opacity: 0.8;
+  display: inline;
+}
+
+.citation-tooltip-year {
+  color: var(--background);
+  opacity: 0.8;
+  display: inline;
+  margin-left: 0.25rem;
+}
+
+/* References Section */
+.references-section {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.references-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.references-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reference-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  scroll-margin-top: 2rem;
+}
+
+.reference-item:target {
+  background: var(--border-color);
+  padding: 0.5rem;
+  margin: -0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.reference-number {
+  font-weight: 600;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.reference-content {
+  flex: 1;
+}
+
+.reference-authors {
+  font-weight: 500;
+}
+
+.reference-title {
+  font-style: italic;
+}
+
+.reference-venue,
+.reference-year {
+  color: var(--accent);
+}
+
+/* GitHub Contribution Graph */
+.github-graph-container {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.github-graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.github-graph-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.github-profile-link {
+  font-size: 0.875rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.github-profile-link:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+}
+
+.github-graph-wrapper {
+  overflow-x: hidden;
+  padding-bottom: 0.5rem;
+}
+
+.github-graph-months {
+  display: grid;
+  grid-template-columns: repeat(53, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+  font-size: 0.65rem;
+  color: var(--accent);
+}
+
+.github-graph-month {
+  white-space: nowrap;
+}
+
+.github-graph-main {
+  display: flex;
+}
+
+.github-graph-grid {
+  display: flex;
+  gap: 2px;
+  width: 100%;
+}
+
+.github-graph-week {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.github-graph-cell {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.github-graph-cell:hover {
+  transform: scale(1.2);
+}
+
+/* Light mode colors */
+.github-graph-cell.level-0 {
+  background-color: #ebedf0;
+}
+
+.github-graph-cell.level-1 {
+  background-color: #9be9a8;
+}
+
+.github-graph-cell.level-2 {
+  background-color: #40c463;
+}
+
+.github-graph-cell.level-3 {
+  background-color: #30a14e;
+}
+
+.github-graph-cell.level-4 {
+  background-color: #216e39;
+}
+
+/* Dark mode colors */
+[data-theme='dark'] .github-graph-cell.level-0 {
+  background-color: #161b22;
+}
+
+[data-theme='dark'] .github-graph-cell.level-1 {
+  background-color: #0e4429;
+}
+
+[data-theme='dark'] .github-graph-cell.level-2 {
+  background-color: #006d32;
+}
+
+[data-theme='dark'] .github-graph-cell.level-3 {
+  background-color: #26a641;
+}
+
+[data-theme='dark'] .github-graph-cell.level-4 {
+  background-color: #39d353;
+}
+
+.github-graph-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+.github-graph-legend .github-graph-cell {
+  width: 11px;
+  height: 11px;
+  aspect-ratio: unset;
+  flex: none;
+  cursor: default;
+}
+
+.github-graph-legend .github-graph-cell:hover {
+  transform: none;
+}
+
+.github-graph-tooltip {
+  background: var(--foreground);
+  color: var(--background);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  z-index: 1000;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.github-graph-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--foreground);
+}
+
+.github-graph-loading {
+  padding: 2rem;
+  text-align: center;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .github-graph-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .github-graph-days span:nth-child(2),
+  .github-graph-days span:nth-child(4),
+  .github-graph-days span:nth-child(6) {
+    visibility: hidden;
+  }
 }

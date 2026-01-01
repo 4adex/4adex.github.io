@@ -4,12 +4,22 @@ import matter from 'gray-matter';
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
 
+export interface Reference {
+  id: string;
+  authors: string;
+  title: string;
+  venue?: string;
+  year?: string;
+  url?: string;
+}
+
 export interface PostData {
   id: string;
   title: string;
   date: string;
   description: string;
   content: string;
+  references?: Reference[];
 }
 
 export function getSortedPostsData() {
@@ -70,6 +80,6 @@ export async function getPostData(id: string) {
   return {
     id,
     content: matterResult.content,
-    ...(matterResult.data as { title: string; date: string; description: string }),
+    ...(matterResult.data as { title: string; date: string; description: string; references?: Reference[] }),
   };
 }

@@ -34,7 +34,7 @@ export default function RootLayout({
           <PageTransition>{children}</PageTransition>
         </main>
         <footer className="footer">
-          <p>© {new Date().getFullYear()} Portfolio</p>
+          <p>© {new Date().getFullYear()} Adesh Gupta</p>
         </footer>
       </body>
     </html>

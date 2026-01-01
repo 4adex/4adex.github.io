@@ -68,7 +68,7 @@ export default function ThemeToggle() {
             <button
                 style={{
                     background: 'none',
-                    border: '1px solid var(--accent)',
+                    border: 'none',
                     borderRadius: '4px',
                     cursor: 'pointer',
                     padding: '0.4rem',
@@ -95,7 +95,7 @@ export default function ThemeToggle() {
             aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
             style={{
                 background: 'none',
-                border: '1px solid var(--accent)',
+                border: 'none',
                 borderRadius: '4px',
                 cursor: 'pointer',
                 padding: '0.4rem',

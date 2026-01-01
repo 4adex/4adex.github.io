@@ -1,12 +1,7 @@
 import { getAllPostIds, getPostData, PostData } from '@/lib/posts';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
-import rehypeHighlight from 'rehype-highlight';
 import 'katex/dist/katex.min.css';
 import 'highlight.js/styles/github-dark.css';
-import CodeBlock from '@/app/components/CodeBlock';
+import MarkdownRenderer from '@/app/components/MarkdownRenderer';
 
 type Params = Promise<{ id: string }>;
 
@@ -33,17 +28,10 @@ export default async function Post({ params }: { params: Params }) {
                 </div>
             </div>
             <div className="markdown-content">
-                <ReactMarkdown 
-                    remarkPlugins={[remarkGfm, remarkMath]}
-                    rehypePlugins={[rehypeKatex, rehypeHighlight]}
-                    components={{
-                        pre: ({ children, ...props }) => (
-                            <CodeBlock {...props}>{children}</CodeBlock>
-                        )
-                    }}
-                >
-                    {postData.content}
-                </ReactMarkdown>
+                <MarkdownRenderer 
+                    content={postData.content} 
+                    references={postData.references || []}
+                />
             </div>
         </article>
     );

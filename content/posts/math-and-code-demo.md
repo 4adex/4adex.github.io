@@ -2,6 +2,31 @@
 title: "Math & Code Demo"
 date: "2026-01-01"
 description: "A demonstration of math equations and code blocks in blog posts."
+references:
+  - id: attention
+    authors: "Vaswani, A., Shazeer, N., Parmar, N., et al."
+    title: "Attention Is All You Need"
+    venue: "NeurIPS"
+    year: "2017"
+    url: "https://arxiv.org/abs/1706.03762"
+  - id: bert
+    authors: "Devlin, J., Chang, M.W., Lee, K., Toutanova, K."
+    title: "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"
+    venue: "NAACL"
+    year: "2019"
+    url: "https://arxiv.org/abs/1810.04805"
+  - id: gpt3
+    authors: "Brown, T., Mann, B., Ryder, N., et al."
+    title: "Language Models are Few-Shot Learners"
+    venue: "NeurIPS"
+    year: "2020"
+    url: "https://arxiv.org/abs/2005.14165"
+  - id: resnet
+    authors: "He, K., Zhang, X., Ren, S., Sun, J."
+    title: "Deep Residual Learning for Image Recognition"
+    venue: "CVPR"
+    year: "2016"
+    url: "https://arxiv.org/abs/1512.03385"
 ---
 
 This post demonstrates the math and code rendering capabilities of this blog. Let's dive in!
@@ -26,11 +51,13 @@ $$
 L = -\sum_{i=1}^{n} y_i \log(\hat{y}_i)
 $$
 
-A more complex example - the attention mechanism in transformers:
+A more complex example - the attention mechanism in transformers[cite:attention]:
 
 $$
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
+
+This mechanism revolutionized NLP and led to models like BERT[cite:bert] and GPT-3[cite:gpt3].
 
 ## Inline Code
 
@@ -116,6 +143,8 @@ $$
 y = Wx + b
 $$
 
+This approach was popularized by ResNet[cite:resnet] and remains fundamental today.
+
 Here's how you'd implement it:
 
 ```python
@@ -143,3 +172,4 @@ This blog now supports:
 - **Block math** using `$$...$$` syntax
 - **Inline code** using backticks
 - **Code blocks** with syntax highlighting for multiple languages
+- **Citations** using `[cite:id]` syntax with hover tooltips and auto-numbering

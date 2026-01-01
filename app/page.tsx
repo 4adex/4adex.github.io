@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getSortedPostsData } from '@/lib/posts';
+import GitHubGraph from './components/GitHubGraph';
 
 const GitHubIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -35,22 +36,22 @@ export default function Home() {
             {/* Hero Section */}
             <div className="hero-section">
                 <div className="hero-photo">
-                    <img src="/photo.jpg" alt="Profile photo" />
+                    <img src="/assets/photo.png" alt="Profile photo" />
                 </div>
                 <div className="hero-info">
-                    <h1 className="hero-name">Your Name</h1>
-                    <p className="hero-title">Student Developer & ML Researcher</p>
+                    <h1 className="hero-name">Adesh Gupta</h1>
+                    <p className="hero-title">Developer & ML Researcher</p>
                     <div className="hero-socials">
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <a href="https://github.com/4adex" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <GitHubIcon />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/adesh-g/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <LinkedInIcon />
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <a href="https://x.com/a4dex" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                             <TwitterIcon />
                         </a>
-                        <a href="mailto:your@email.com" aria-label="Email">
+                        <a href="mailto:adeshgupta101@gmail.com" aria-label="Email">
                             <EmailIcon />
                         </a>
                     </div>
@@ -72,20 +73,28 @@ export default function Home() {
                 <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem', fontFamily: 'var(--font-sans)' }}>Achievements</h2>
                 <div className="timeline">
                     <div className="timeline-item">
-                        <h3 className="timeline-title">Top 10% in Kaggle Grand Prix</h3>
-                        <p className="timeline-description">Achieved silver medal in the global LLM efficiency challenge.</p>
+                        <h3 className="timeline-title">Silver in Inter IIT Techmeet 14.0</h3>
+                        <p className="timeline-description">1st runner up in ISRO Geospatial VLM problem statement among 24 IITs.</p>
                     </div>
                     <div className="timeline-item">
-                        <h3 className="timeline-title">Research Intern at Google DeepMind</h3>
-                        <p className="timeline-description">Worked on efficient inference algorithms for large-scale transformers.</p>
+                        <h3 className="timeline-title">HiLabs AIQuest Winner</h3>
+                        <p className="timeline-description">Won first prize in HiLabs AIQuest hackathon, organized in IIT Roorkee.</p>
                     </div>
                     <div className="timeline-item">
-                        <h3 className="timeline-title">Best Systems Paper Award</h3>
-                        <p className="timeline-description">Received at NeurIPS 2023 for work on distributed training optimization.</p>
+                        <h3 className="timeline-title">Google Summer of Code 2025</h3>
+                        <p className="timeline-description">Selected for GSoC 2025 and contributed in Graphite.</p>
                     </div>
                     <div className="timeline-item">
-                        <h3 className="timeline-title">Open Source Contributor</h3>
-                        <p className="timeline-description">Core contributor to HuggingFace Transformers library.</p>
+                        <h3 className="timeline-title">ICLR 2025 BlogPost Track</h3>
+                        <p className="timeline-description">Blog on positional embeddings selected for ICLR 2025.</p>
+                    </div>
+                    <div className="timeline-item">
+                        <h3 className="timeline-title">Calimero x Starknet Hackathon</h3>
+                        <p className="timeline-description">2nd runner up in privacy focused hackathon, made a game in Rust.</p>
+                    </div>
+                    <div className="timeline-item">
+                        <h3 className="timeline-title">ETHOnline 2024</h3>
+                        <p className="timeline-description">Won the DIMO and Sign protocol sponsor tracks.</p>
                     </div>
                 </div>
             </section>
@@ -107,6 +116,9 @@ export default function Home() {
                     <Link href="/blog" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem' }}>View all posts &rarr;</Link>
                 </div>
             </section>
+
+            {/* GitHub Contribution Graph */}
+            <GitHubGraph username="4adex" />
         </section>
     );
 }
