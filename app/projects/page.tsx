@@ -31,12 +31,12 @@ const projects = [
         description: 'Built this to learn Go properly. It\'s a full MVC app with JWT auth, password hashing, and all the things you\'d expect from a library system.',
         link: 'https://github.com/4adex/mvc-golang'
     },
-    {
-        title: 'Collision Detection using GJK Algorithm',
-        tech: 'Python, OpenCV, Numpy, Scikit-learn',
-        description: 'Extracts 3D wireframes from 2D urban images using depth maps and segmentation. The interesting part was implementing vertex and line detection with connected component analysis.',
-        link: 'https://github.com/4adex/collision-detection'
-    }
+    // {
+    //     title: 'Collision Detection using GJK Algorithm',
+    //     tech: 'Python, OpenCV, Numpy, Scikit-learn',
+    //     description: 'Extracts 3D wireframes from 2D urban images using depth maps and segmentation. The interesting part was implementing vertex and line detection with connected component analysis.',
+    //     link: 'https://github.com/4adex/collision-detection'
+    // }
 ];
 
 export default function Projects() {

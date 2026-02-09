@@ -67,11 +67,12 @@ export default function Home() {
             <div style={{ marginBottom: '4rem' }}>
                 <h1>Hey there!</h1>
                 <p>
-                    I'm a student developer and machine learning researcher.
+                    I'm a developer and machine learning researcher, currently pursuing my undergraduate studies in Mathematics from IIT Roorkee.
                 </p>
                 <p>
-                    I work at the intersection of systems and AI, exploring how efficient compute can unlock new capabilities.
-                    This site is a collection of my technical notes, research logs, and occasional rants.
+                    My current focus lies in exploring machine learning systems and frontier models, driven by a passion for problem-solving and mathematics as a whole.
+                    
+                    Beyond academics, I'm an active member of <a href="https://sdslabs.co" target="_blank" rel="noopener noreferrer">SDSLabs</a>, IIT Roorkee's development club, as well as <a href="https://vlg.iitr.ac.in/" target="_blank" rel="noopener noreferrer">VLG IITR</a>, the institute's student-led deep learning community.
                 </p>
             </div>
 
