@@ -19,13 +19,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var theme = localStorage.getItem('theme') || 'dark';
+                document.body.setAttribute('data-theme', theme);
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className={`${inter.variable}`} data-theme="dark">
         <header className="header">
           <nav>
             <ul className="nav-list">
               <li><Link href="/">Home</Link></li>
               <li><Link href="/projects">Projects</Link></li>
+              <li><Link href="/publications">Publications</Link></li>
               <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/resume">Resume</Link></li>
             </ul>
             <ThemeToggle />
           </nav>

@@ -27,6 +27,12 @@ const EmailIcon = () => (
     </svg>
 );
 
+const GoogleScholarIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+    </svg>
+);
+
 export default function Home() {
     const allPostsData = getSortedPostsData();
     const recentPosts = allPostsData.slice(0, 3); // Top 3
@@ -36,7 +42,7 @@ export default function Home() {
             {/* Hero Section */}
             <div className="hero-section">
                 <div className="hero-photo">
-                    <img src="/assets/photo.png" alt="Profile photo" />
+                    <img src="/assets/mypic.jpeg" alt="Profile photo" />
                 </div>
                 <div className="hero-info">
                     <h1 className="hero-name">Adesh Gupta</h1>
@@ -48,20 +54,24 @@ export default function Home() {
                         <a href="https://www.linkedin.com/in/adesh-g/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <LinkedInIcon />
                         </a>
+                        
                         <a href="https://x.com/a4dex" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                             <TwitterIcon />
                         </a>
                         <a href="mailto:adeshgupta101@gmail.com" aria-label="Email">
                             <EmailIcon />
                         </a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=pKh0dpYAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+                            <GoogleScholarIcon />
+                        </a>
                     </div>
                 </div>
             </div>
 
             <div style={{ marginBottom: '4rem' }}>
-                <h1>Thinking, Building, Sharing.</h1>
+                <h1>Hey there!</h1>
                 <p>
-                    Hi, I am a student developer and machine learning researcher.
+                    I'm a student developer and machine learning researcher.
                 </p>
                 <p>
                     I work at the intersection of systems and AI, exploring how efficient compute can unlock new capabilities.

@@ -8,24 +8,34 @@ export const metadata: Metadata = {
 
 const projects = [
     {
-        title: 'Tinker',
-        description: 'An experiment in efficient LLM inference and reasoning chains.',
-        link: 'https://github.com/example/tinker' // Placeholder
+        title: 'VortexDB',
+        tech: 'Rust',
+        description: 'A lightweight vector database built from scratch in Rust, featuring HNSW and KD-Tree indexing algorithms for efficient similarity search.',
+        link: 'https://github.com/sdslabs/VortexDB'
     },
     {
-        title: 'Thinking Machines',
-        description: 'A minimal portfolio inspired by academic aesthetics. Built with Next.js.',
-        link: '#' // Current site
+        title: 'Drishti',
+        tech: 'RayServe, Docker, Huggingface',
+        description: 'Scalable remote sensing pipeline integrating EarthMind-4B, RemoteSAM & BERT classifier for unified satellite imagery analysis.',
+        link: 'https://github.com/4adex/drishti'
     },
     {
-        title: 'Distributed Training Utils',
-        description: 'Python library for optimizing PyTorch distributed training jobs on slurm clusters.',
-        link: 'https://github.com/example/dist-utils' // Placeholder
+        title: 'Erdos',
+        tech: 'PHP, Nginx, Docker',
+        description: 'A math problem-solving platform with 1500+ active users. People solve problems, track progress, and compete in annual contests. I help keep it running and add new features.',
+        link: 'https://erdos.sdslabs.co/'
     },
     {
-        title: 'Vision-Language Adapter',
-        description: 'Research code for adapting CLIP models to novel tasks via prompt tuning.',
-        link: 'https://github.com/example/vla'
+        title: 'Library Management System',
+        tech: 'Golang, MySQL',
+        description: 'Built this to learn Go properly. It\'s a full MVC app with JWT auth, password hashing, and all the things you\'d expect from a library system.',
+        link: 'https://github.com/4adex/mvc-golang'
+    },
+    {
+        title: 'Collision Detection using GJK Algorithm',
+        tech: 'Python, OpenCV, Numpy, Scikit-learn',
+        description: 'Extracts 3D wireframes from 2D urban images using depth maps and segmentation. The interesting part was implementing vertex and line detection with connected component analysis.',
+        link: 'https://github.com/4adex/collision-detection'
     }
 ];
 
@@ -41,6 +51,7 @@ export default function Projects() {
                                 {project.title}
                             </a>
                         </h3>
+                        <p className="project-tech">{project.tech}</p>
                         <p className="project-description">{project.description}</p>
                     </div>
                 ))}

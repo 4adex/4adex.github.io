@@ -42,17 +42,15 @@ const MoonIcon = () => (
 );
 
 export default function ThemeToggle() {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
         setMounted(true);
-        // Check local storage or preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setTheme(savedTheme);
-            document.body.setAttribute('data-theme', savedTheme);
-        }
+        // Check local storage or preference, default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
+        document.body.setAttribute('data-theme', savedTheme);
     }, []);
 
     const toggleTheme = () => {
