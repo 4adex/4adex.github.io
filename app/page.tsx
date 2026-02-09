@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { getSortedPostsData } from '@/lib/posts';
 import GitHubGraph from './components/GitHubGraph';
 
 const GitHubIcon = () => (
@@ -34,9 +33,6 @@ const GoogleScholarIcon = () => (
 );
 
 export default function Home() {
-    const allPostsData = getSortedPostsData();
-    const recentPosts = allPostsData.slice(0, 3); // Top 3
-
     return (
         <section>
             {/* Hero Section */}
@@ -111,20 +107,7 @@ export default function Home() {
 
             <section>
                 <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem', fontFamily: 'var(--font-sans)' }}>Recent Writing</h2>
-                <ul className="post-list">
-                    {recentPosts.map(({ id, date, title, description }) => (
-                        <li className="post-item" key={id}>
-                            <span className="post-date">{date}</span>
-                            <h3 className="post-title">
-                                <Link href={`/blog/${id}`}>{title}</Link>
-                            </h3>
-                            <p className="post-description">{description}</p>
-                        </li>
-                    ))}
-                </ul>
-                <div style={{ marginTop: '2rem' }}>
-                    <Link href="/blog" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem' }}>View all posts &rarr;</Link>
-                </div>
+                <p style={{ color: 'var(--accent)' }}>Coming soon! I'm working on some posts.</p>
             </section>
 
             {/* GitHub Contribution Graph */}
